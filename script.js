@@ -90,3 +90,9 @@ function handleRestartGame() {
     document.querySelectorAll('.cell')
                .forEach(cell => cell.innerHTML = "");
 }    
+
+
+function changePageBackgroundColor(cor) {
+    document.body.style.backgroundColor = cor;
+    document.querySelector('.game--restart').style.backgroundColor = cor;
+}
