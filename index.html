@@ -10,7 +10,7 @@
 </head>
 <body>
     <section>
-        <h1 class="game--title">Tic Tac Toe</h1>
+        <h1 class="game--title">Jogo da Velha</h1>
         <div class="game--container">
             <div data-cell-index="0" class="cell"></div>
             <div data-cell-index="1" class="cell"></div>
@@ -23,7 +23,19 @@
             <div data-cell-index="8" class="cell"></div>
         </div>
         <h3 class="game--status"></h3>
-        <button class="game--restart">Restart Game</button>
+        <button class="game--restart">Reiniciar</button>
+    </section>
+    <section>
+        <div id="tema">
+            <h2>Cor do fundo:</h2>
+          
+            <div class="cor" id="temaAzul" style="background-color: #0081FF" codigo="azul" valor="0"></div>
+            <div class="cor" id="temaCinza" style="background-color: #666" codigo="cinza" valor="1"></div>
+            <div class="cor" id="temaVermelho" style="background-color: #054038" codigo="vermelho" valor="2"></div>
+            <div class="cor" id="temaLaranja" style="background-color: #FFA006" codigo="laranja" valor="3"></div>
+            <div class="cor" id="temaVerde" style="background-color: #388E3C" codigo="verde" valor="4"></div>
+            <div class="cor" id="temaRosa" style="background-color: #FF4081" codigo="rosa" valor="5"></div>
+          </div>
     </section>
 <script src="./script.js"></script>
 </body>
