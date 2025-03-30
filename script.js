@@ -16,6 +16,17 @@ statusDisplay.innerHTML = currentPlayerTurn();
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
 document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
 
+const winningConditions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+
 function handleCellClick(clickedCellEvent) {   
         const clickedCell = clickedCellEvent.target;
         const clickedCellIndex = parseInt(
@@ -28,25 +39,15 @@ function handleCellClick(clickedCellEvent) {
    
         handleCellPlayed(clickedCell, clickedCellIndex);
         handleResultValidation();
-}
+};
 
 function handleCellPlayed(clickedCell, clickedCellIndex) {
     
         gameState[clickedCellIndex] = currentPlayer;
         clickedCell.innerHTML = currentPlayer;
-    }
+};
 
-    const winningConditions = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
-    ];
-    function handleResultValidation() {
+function handleResultValidation() {
         let roundWon = false;
         for (let i = 0; i <= 7; i++) {
             const winCondition = winningConditions[i];
@@ -73,14 +74,14 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
         gameActive = false;
         return;
     }
-
+    
     handlePlayerChange();
-}
+};
 
 function handlePlayerChange() {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     statusDisplay.innerHTML = currentPlayerTurn();
-}
+};
 
 function handleRestartGame() {
     gameActive = true;
@@ -89,10 +90,10 @@ function handleRestartGame() {
     statusDisplay.innerHTML = currentPlayerTurn();
     document.querySelectorAll('.cell')
                .forEach(cell => cell.innerHTML = "");
-}    
+};  
 
 
 function changePageBackgroundColor(cor) {
     document.body.style.backgroundColor = cor;
     document.querySelector('.game--restart').style.backgroundColor = cor;
-}
+};
